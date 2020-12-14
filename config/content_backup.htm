@@ -108,23 +108,120 @@
 <h3>W7</h3>
 <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <h3>HW2</h3>
-<pre><span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="n">target_url</span> <span class="o">=</span> <span class="s2">"https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762"</span>
-<span class="n">cp1a</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">target_url</span><span class="p">):</span>
-    <span class="n">cp1a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()))</span>
-<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">shuffle</span>
-<span class="n">shuffle</span><span class="p">(</span><span class="n">cp1a</span><span class="p">)</span>
-<span class="n">step</span> <span class="o">=</span> <span class="mi">12</span>
-<span class="n">cp1aGroup</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cp1a</span><span class="p">)</span><span class="o">/</span><span class="n">step</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cp1a</span><span class="p">),</span><span class="n">step</span><span class="p">):</span>
-    <span class="n">cp1aGroup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cp1a</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">step</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cp1aGroup</span><span class="p">)</span></pre>
-<p>=======</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762"
+cp1a = []
+for line in urllib.request.urlopen(target_url):
+    cp1a.append(int(line.decode('utf-8').rstrip()))
+from random import shuffle
+shuffle(cp1a)
+step = 12
+cp1aGroup = []
+m = int(len(cp1a)/step)
+for i in range(0,len(cp1a),step):
+    cp1aGroup.append(cp1a[i:i+step])
+print(cp1aGroup)
+=======
+
+</pre>
+<pre><span class="kn"></span></pre>
 <p><a href="https://www.kaggle.com/nfu40923208/cp2020-w8" title="kaggle">kaggle</a></p>
-<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 5e213329892c1901c1e822393c1a7b19fd537ee4</p>
-<h2>W10-14</h2>
+<p></p><h2>W10-14</h2>
 <h3>HW3</h3>
+<h4>練習2 </h4>
+<p><span>Odd Or Even  (奇數或偶數)</span></p>
+<div><i>input if types int equality comparison numbers mod</i></div>
+<p>Again, the exercise comes first (with a few extras if you want the extra challenge or want to spend more time), followed by a discussion. Enjoy!</p>
+<p><span>Exercise 2 (and Solution)</span></p>
+<p>Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user.<span> </span><em>Hint: how does an even / odd number react differently when divided by 2?</em></p>
+<p>Extras:</p>
+<ol>
+<li>If the number is a multiple of 4, print out a different message.</li>
+<li>Ask the user for two numbers: one number to check (call it<span> </span><code class="highlighter-rouge">num</code>) and one number to divide by (<code class="highlighter-rouge">check</code>). If<span> </span><code class="highlighter-rouge">check</code><span> </span>divides evenly into<span> </span><code class="highlighter-rouge">num</code>, tell that to the user. If not, print a different appropriate message.</li>
+</ol>
+<p><span>Discussion</span></p>
+<p>Concepts for this week:</p>
+<ul>
+<li>Modular arithmetic (the modulus operator)</li>
+<li>Conditionals (if statements)</li>
+<li>Checking equality</li>
+</ul>
+<p><span>Modular arithmetic (the modulus operator)</span></p>
+<p><span>We have been doing arithmetic (addition, subtraction, multiplication, division) since elementary school, and often it is useful for us to find not the answer to a division problem but the remainder when we do a division operation. This operation is called the “modulus operation.” For example, when I divide 5 by 3, the remainder is 2, and the sentence reads like this: “5 modulo 3 is 2.”</span></p>
+<figure class="highlight">
+<p><span>In the Python shell:</span></p>
+<pre><code class="language-python" data-lang="python">  
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">6</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">7</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">1</span></code></pre>
+</figure>
+<p>The<span> </span><code class="highlighter-rouge">%</code><span> </span>sign is exactly the modulus operator.</p>
+<p><span>Conditionals</span></p>
+<figure class="highlight">
+<p><span>When a computer (or a program) needs to decide something, it checks whether some condition is satisfied, which is where the term conditional comes from. Conditionals are a fancy way of saying “if statements”. If Michele was born in New York, she has an American passport. That statement is a conditional (if statement) that in this case is true. In Python this works the same way:</span></p>
+<pre><code class="language-python" data-lang="python">  
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">17</span><span class="p">:</span> 
+  <span class="k">print</span><span class="p">(</span><span class="s">"can see a rated R movie"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">17</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"can see a rated PG-13 movie"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> 
+  <span class="k">print</span><span class="p">(</span><span class="s">"can only see rated PG movies"</span><span class="p">)</span></code></pre>
+</figure>
+<p>When the program gets to the<span> </span><code class="highlighter-rouge">if</code><span> </span>statement, it will check the value of the variable called<span> </span><code class="highlighter-rouge">age</code><span> </span>against all of the conditions, in order, and will print something to the screen accordingly. Note that<span> </span><code class="highlighter-rouge">elif</code><span> </span>is a portmanteau of “else” and “if”. So if the variable<span> </span><code class="highlighter-rouge">age</code><span> </span>holds the value 15, the statement<span> </span><code class="highlighter-rouge">"can see a rated PG-13 movie"</code><span> </span>will be printed to the screen.</p>
+<p>Note how the statement<span> </span><code class="highlighter-rouge">elif age &lt; 17 and age &gt; 12</code><span> </span>has the statement<span> </span><code class="highlighter-rouge">and</code><span> </span>- you can use<span> </span><code class="highlighter-rouge">or</code><span> </span>and<span> </span><code class="highlighter-rouge">not</code><span> </span>in the same way. Understanding a bit about logic and how it works, or being able to rationally think about logic will help you get the conditions right - oh, and a lot of practice.</p>
+<p>Links about conditionals:</p>
+<p><span>  The official Python documentation</span></p>
+<p><span>  Python for beginners explains conditionals</span></p>
 <p></p>
+<p><span>Checking for equality (and comparators in general)</span></p>
+<figure class="highlight">
+<p><span>A fundamental thing you want to do with your program is check whether some number is equal to another. Say the user tells you how many questions they answered incorrectly on a practice exam, and depending on the number of correctly-answered questions, you can suggest a specific course of action. For integers, strings, floats, and many other variable types, this is done with a simple syntax: ==. To explicitly check inequality, use !=.</span></p>
+<pre><code class="language-python" data-lang="python">  
+<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> 
+  <span class="k">print</span><span class="p">(</span><span class="s">"the variable has the value 3"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">a</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"the variable does not have the value 3"</span><span class="p">)</span></code></pre>
+</figure>
+<p>Notice how in this example, the condition is redundant. In the first condition we are checking whether the variable<span> </span><code class="highlighter-rouge">a</code><span> </span>has the value 3 and in the second, we are checking whether<span> </span><code class="highlighter-rouge">a</code><span> </span>does NOT have the value 3. However, if the first condition is not true (<code class="highlighter-rouge">a</code><span> </span>is in fact not 3), then the second condition is by definition true. So a more efficient way to write the above conditional is like this:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python"><span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> 
+  <span class="k">print</span><span class="p">(</span><span class="s">"the variable has the value 3"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"the variable does not have the value 3"</span><span class="p">)</span></code></pre>
+</figure>
+<p>The same equality / inequality comparisons work for strings.</p>
+<p>Links about equality and comparators:</p>
+<ul>
+<li>
+<p><span>The official Python documentation</span></p>
+</li>
+</ul>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">num = int(input("enter a number to check: "))
+check = int(input("enter a number to divide by: "))
+
+if num % 4 == 0: 
+    print(num, "this number is a multiple of 4")
+elif num % 2 == 0:
+    print(num, "this is an even nummber")
+else:
+    print(num, "its an odd number")
+
+if check % 2 == 0:
+    print(num, "Can devide evenly by:", check)
+else:
+    print(num, "Can't be devide evenly by:", check)</pre>
+<p></p>
+<p>&gt;y:\python38\pythonw.exe -u "HW3-2.py"<br/>enter a number to check: 4<br/>enter a number to divide by: 3<br/>4 this number is a multiple of 4<br/>4 Can't be devide evenly by: 3</p>
+<h4>練習7</h4>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">__author__ = 'jhunt'
+
+a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+b = [number for number in a if number % 2 == 0]
+
+print(b)</pre>
+<p><img alt="" height="249" src="/images/hw3-7.PNG" width="534"/></p><h2>W15-18</h2>
+<h3>HW4</h3>
 <h1>課程筆記</h1>
