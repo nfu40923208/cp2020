@@ -122,7 +122,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='每週進度.html'>每週進度</a><ul class='dropdown'><li><a href='W1.html'>W1</a><li><a href='W2.html'>W2</a><li class='has-children'><a href='W3.html'>W3</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a></li></ul><li class='has-children'><a href='W4-9.html'>W4-9</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='HW2.html'>HW2</a></li></ul><li class='has-children'><a href='W10-14.html'>W10-14</a><ul class='dropdown'><li><a href='HW3.html'>HW3</a></li></ul><li class='has-children'><a href='W15-18.html'>W15-18</a><ul class='dropdown'><li><a href='HW4.html'>HW4</a></li></li></ul></ul><li><a href='課程筆記-1.html'>課程筆記-1</a><li><a href='課程筆記-2.html'>課程筆記-2</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='每週進度.html'>每週進度</a><ul class='dropdown'><li><a href='W1.html'>W1</a><li><a href='W2.html'>W2</a><li class='has-children'><a href='W3.html'>W3</a><ul class='dropdown'><li><a href='HW1.html'>HW1</a></li></ul><li class='has-children'><a href='W4-9.html'>W4-9</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='HW2.html'>HW2</a></li></ul><li class='has-children'><a href='W10-14.html'>W10-14</a><ul class='dropdown'><li><a href='HW3.html'>HW3</a></li></ul><li class='has-children'><a href='W15-18.html'>W15-18</a><ul class='dropdown'><li><a href='HW4.html'>HW4</a></li></li></ul></ul><li><a href='課程筆記.html'>課程筆記</a></li>
                       </ul>
                 </nav>
               </div>
@@ -134,6 +134,7 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">W10-14 << <a href='W10-14.html'>Previous</a> <a href='W15-18.html'>Next</a> >> W15-18<br /><h1>HW3</h1>
+<p></p>
 <h4>練習2 </h4>
 <p><span>Odd Or Even  (奇數或偶數)</span></p>
 <div><i>input if types int equality comparison numbers mod</i></div>
@@ -247,7 +248,23 @@ b = [number for number in a if number % 2 == 0]
 
 print(b)</pre>
 <p><img alt="" height="249" src="./../images/hw3-7.PNG" width="534"/></p>
-<p>練習16</p>
+<p>Exercise 16</p>
+<p>練習16 </p>
+<p><span>Password Generator </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span><span> </span></span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span><span> </span></span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span><span> </span></span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></p>
+<p><span><span>密碼生成器 </span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span><span> </span></span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span><span> </span></span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/><span><span> </span></span><img class="chili" src="https://www.practicepython.org/assets/img/chili-liz-20x20.png"/></span></p>
+<p>Write a password generator in Python. Be creative with how you generate passwords - strong passwords have a mix of lowercase letters, uppercase letters, numbers, and symbols. The passwords should be random, generating a new password every time the user asks for a new password. Include your run-time code in a main method.</p>
+<p>用<span>Python</span>編寫密碼生成器。在生成密碼的方式上要有創意<span>-</span>強密碼包含小寫字母，大寫字母，數字和符號。密碼應該是隨機的，每次用戶要求輸入新密碼時都會生成一個新密碼。在主要方法中包括您的運行時代碼。</p>
+<p>Extra:</p>
+<ul>
+<li>Ask the user how strong they want their password to be. For weak passwords, pick a word or two from a list.</li>
+</ul>
+<p>額外：</p>
+<p><span> </span>詢問用戶他們希望密碼的強度。對於弱密碼，請從列表中選擇一兩個單詞。</p>
+<p><span>Discussion</span></p>
+<p><span>There are no new topics this week, but you will need to use Python’s random module, described in this post.</span></p>
+<p>討論區</p>
+<p>本週沒有新話題，但是您需要使用<span>Python</span>的<span>random</span>模塊，如本文所述。</p>
+<p><span></span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
 
 s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&amp;*()?"
@@ -255,15 +272,8 @@ passlen = 8
 p ="".join(random.sample(s,passlen ))
 print(p)</pre>
 <p></p>
-<p>練習16</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import random
-
-s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&amp;*()?"
-passlen = 8
-p ="".join(random.sample(s,passlen ))
-print(p)</pre>
 <p></p>
-<br />W10-14 << <a href='W10-14.html'>Previous</a> <a href='W15-18.html'>Next</a> >> W15-18</div>
+<p></p><br />W10-14 << <a href='W10-14.html'>Previous</a> <a href='W15-18.html'>Next</a> >> W15-18</div>
         
     <!-- footer -->
       <div class="container">
