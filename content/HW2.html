@@ -134,26 +134,37 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">W7 << <a href='W7.html'>Previous</a> <a href='W10-14.html'>Next</a> >> W10-14<br /><h1>HW2</h1>
+<p>解題步驟:</p>
+<p>1.導入要使用的物件。</p>
+<p>import urllib.request<br/>2.設定目標網址。</p>
+<p>target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"<br/>3.設定名為cp1b的數列。</p>
+<p>cp1b = []<br/>4.使用for-loop以line跟url為變數,並且讓cp1b新增編碼後的line,然後消除字尾的符號。</p>
+<p>for line in urllib.request.urlopen(target_url):<br/> cp1b.append(int(line.decode('utf-8').rstrip()))<br/>5.shuffle沒有辦法直接使用,需導入random模塊加以使用。</p>
+<p>from random import shuffle<br/>6.將cp1b裡的原素隨機排列。</p>
+<p>shuffle(cp1b)<br/>7.將每次分組的停止點設12人為上限。</p>
+<p>step = 12<br/>8.另設一個名為cp1bGroup的數列。</p>
+<p>cp1bGroup = []<br/>9.設m為變數,int功用為cp1b取整數,len為計算cp1b的人數,step為一組取12人。</p>
+<p>m = int(len(cp1b)/step)<br/>10.再次使用for-loop以i在範圍(以0開頭,len為計算cp1b的人數,在第12人結束),</p>
+<p>讓cp1bGroup新增定義i的步長與停止點。</p>
+<p>for i in range(0,len(cp1b),step):<br/> cp1bGroup.append(cp1b[i:i+step])<br/>11.打印出數列cp1bGroup。</p>
+<p>print(cp1bGroup)</p>
+<p></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
-target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762"
-cp1a = []
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"
+cp1b = []
 for line in urllib.request.urlopen(target_url):
-    cp1a.append(int(line.decode('utf-8').rstrip()))
+    cp1b.append(int(line.decode('utf-8').rstrip()))
 from random import shuffle
-shuffle(cp1a)
+shuffle(cp1b)
 step = 12
-cp1aGroup = []
-m = int(len(cp1a)/step)
-for i in range(0,len(cp1a),step):
-    cp1aGroup.append(cp1a[i:i+step])
-print(cp1aGroup)
-=======
-
-</pre>
+cp1bGroup = []
+m = int(len(cp1b)/step)
+for i in range(0,len(cp1b),step):
+    cp1bGroup.append(cp1b[i:i+step])
+print(cp1bGroup)</pre>
 <pre><span class="kn"></span></pre>
 <p><a href="https://www.kaggle.com/nfu40923208/cp2020-w8" title="kaggle">kaggle</a></p>
-<p></p>
-<br />W7 << <a href='W7.html'>Previous</a> <a href='W10-14.html'>Next</a> >> W10-14</div>
+<p></p><br />W7 << <a href='W7.html'>Previous</a> <a href='W10-14.html'>Next</a> >> W10-14</div>
         
     <!-- footer -->
       <div class="container">
